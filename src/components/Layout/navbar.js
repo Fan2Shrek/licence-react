@@ -25,6 +25,9 @@ const Navbar = () => {
                 <li className={styles.navItem}>
                     <a href={path.category}>Categorie</a>
                 </li>
+                <li className={styles.navItem}>
+                    <a href={path.likes}>Favories</a>
+                </li>
             </ul>
         </div>
         <div>

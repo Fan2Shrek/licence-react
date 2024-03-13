@@ -1,7 +1,6 @@
 import{ useSearchParams} from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-import FilmCard from '../../components/Card/filmCard/filmCard';
 import styles from './search.module.scss';
 import filmApi from '../../lib/filmApi';
 import FilmContainer from '../../components/Container/filmContainer';

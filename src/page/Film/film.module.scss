@@ -58,6 +58,11 @@
                     text-align: center;
                 }
             }
+
+            .notes {
+                display: flex;
+                justify-content: space-between;
+            }
         }
     }
 }

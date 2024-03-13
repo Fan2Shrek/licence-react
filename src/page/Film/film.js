@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 import styles from './film.module.scss';
 import filmApi from '../../lib/filmApi';
 import { getPath } from '../../helper/imgHelper';
 import CategoryCard from '../../components/Card/category/categoryCard';
-
-import { CircularProgressbar } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
+import StarContainer from '../../components/Container/starContainer';
 
 const Film = () => {
     let { id } = useParams();
@@ -51,10 +51,19 @@ const Film = () => {
                     <p className={styles.production}>Production : {film.production_companies.map(company => company.name).join(', ')}</p>
                 </div>
                 <div className={styles.notes}>
-                    <h2>Notes</h2>
-                    <div className={styles.rating}>
-                        <CircularProgressbar value={film.vote_average * 10} text={`${film.vote_average}%`} />
-                        <p>Sur : {film.vote_count} avis</p>
+                   <div>
+                        <h2>Notes</h2>
+                        <div className={styles.rating}>
+                            <CircularProgressbar value={film.vote_average * 10} text={`${Math.round(film.vote_average * 10)}%`} />
+                            <p>Sur : {film.vote_count} avis</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Votre avis compte : </h3>
+                        {/* @todo get current note  */}
+                        {/* A context is needed  */}
+                        {/* @see https://developer.themoviedb.org/reference/account-rated-movies  */}
+                        <StarContainer filmId={film.id} />
                     </div>
                 </div>
             </div>

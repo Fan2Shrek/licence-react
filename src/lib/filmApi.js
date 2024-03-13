@@ -4,7 +4,7 @@ import { flatQuery } from "../helper/querryHelper";
 class FilmApi {
     constructor(baseUrl, api) {
         this.baseUrl = baseUrl;
-        this.api = api();
+        this.api = api;
     }
 
     search(query) {
@@ -29,6 +29,14 @@ class FilmApi {
 
     getFilm(id) {
         return this.api.get(`${this.baseUrl}/movie/${id}?language=fr-FR`);
+    }
+
+    rateFilm(id, rate) {
+        return this.api.post(`${this.baseUrl}/movie/${id}/rating`, { value: rate });
+    }
+
+    deleteRate(id) {
+        return this.api.delete(`${this.baseUrl}/movie/${id}/rating`);
     }
 }
 
