@@ -11,6 +11,9 @@ const Navbar = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         navigate(`${path.search}?search=${search}`);
+        // @todo find a better way to refresh the page
+        // Due to the fact that the search page is a child of the home page, the page is not refreshed when the search is done
+        window.location.reload();
     }
 
     return <nav className={styles.navbar}>
