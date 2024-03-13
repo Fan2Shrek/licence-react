@@ -1,11 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import './App.css';
+import path from "./path";
 import Home from "./page/home";
 import Layout from "./Layout/main";
 import Search from "./page/Recherche/search";
-import path from "./path";
 import Category from "./page/Category/category";
+import Film from "./page/Film/film";
 
 function App() {
   return <>
@@ -13,8 +14,9 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route index path={path.home} element={<Home />} />
-          <Route index path={path.search} element={<Search />} />
-          <Route index path={path.category} element={<Category />} />
+          <Route path={path.search} element={<Search />} />
+          <Route path={path.category} element={<Category />} />
+          <Route path={path.film} element={<Film />} />
         </Route>
       </Routes>
     </BrowserRouter>

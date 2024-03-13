@@ -1,0 +1,24 @@
+.content {
+    h1 {
+        font-size: 2rem;
+        margin-block: 1rem;
+        text-align: center;
+    }
+
+    .main {
+        display: flex;
+        width: 50%;
+
+        .presentation {
+            width: 50%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .details {
+
+        }
+    }
+}

@@ -26,6 +26,10 @@ class FilmApi {
     getCategories() {
         return this.api.get(`${this.baseUrl}/genre/movie/list?language=fr-FR`);
     }
+
+    getFilm(id) {
+        return this.api.get(`${this.baseUrl}/movie/${id}?language=fr-FR`);
+    }
 }
 
 let filmApi = null;
