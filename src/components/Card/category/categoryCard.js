@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import styles from './categoryCard.module.scss';
 
-const CategoryCard = ({category, selected: selectedProps = false}) => {
+const CategoryCard = ({category, selected: selectedProps = false, unselectable = false}) => {
     const [selected, setSelected] = useState(selectedProps);
     const classes = [styles.card];
 
-    if(selected) {
+    if(selected && !unselectable) {
         classes.push(styles['selected']);
     }
 
