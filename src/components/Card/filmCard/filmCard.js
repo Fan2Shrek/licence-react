@@ -8,7 +8,7 @@ const filmCard = ({ film, detailed }) => {
             <p>{film.title}</p>
             <img src={getPath(film.poster_path)} alt={film.title}/>
             {detailed && <div>
-                <p>{film.release_date}</p>
+                <p>{new Date(film.release_date).getFullYear()}</p>
             </div>
             }
         </div>
