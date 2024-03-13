@@ -13,6 +13,7 @@ const StarContainer = ({ filmId }) => {
 
     const handleDelete = () => {
         filmApi.deleteRate(filmId);
+        setHover(0);
     }
 
     return <>
