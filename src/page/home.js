@@ -5,7 +5,7 @@ import { Navigation , Mousewheel} from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import FilmCard from "../components/Card/filmCard";
+import FilmCard from "../components/Card/filmCard/filmCard";
 import style from "./home.module.scss";
 import filmApi from "../lib/filmApi";
 
@@ -28,8 +28,8 @@ const Home = () => {
                 navigation={true}
             >
                 {films.map((film) =>
-                    <SwiperSlide>
-                        <FilmCard film={film} key={film.id}/>
+                    <SwiperSlide  key={film.id}>
+                        <FilmCard film={film}/>
                     </SwiperSlide>
                 )}
             </Swiper>

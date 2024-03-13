@@ -1,15 +1,17 @@
 import { Outlet } from "react-router-dom";
+
+import styles from './main.module.scss';
 import Navbar from "../components/Layout/navbar";
 import Footer from "../components/Layout/footer";
 
-const Layout = (props) => {
-    console.log(props)
-
-    return <>
+const Layout = () => {
+    return <div className={styles.content}>
         <Navbar />
-        <Outlet />
+        <main>
+            <Outlet />
+        </main>
         <Footer />
-    </>
+    </div>
 }
 
 export default Layout;

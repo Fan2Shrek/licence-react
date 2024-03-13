@@ -1,0 +1,18 @@
+.content {
+    h1 {
+        font-size: 2rem;
+        margin-block: 1rem;
+        text-align: center;
+    }
+
+    .category--container {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        overflow: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
