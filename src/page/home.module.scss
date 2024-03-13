@@ -1,0 +1,14 @@
+.home {
+    h1 {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .film--container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+}
