@@ -9,13 +9,13 @@ export const LikeProvider = ({ children }) => {
     const [likeIds, setLikeIds] = useState([]);
 
     const addLike = (film) => {
-        setLikes([...likes, film]);
         likeApi.addLike(film.id);
+        setLikes([...likes, film]);
     }
 
     const removeLike = (film) => {
-        setLikes(likes.filter(like => like !== film));
         likeApi.removeLike(film.id);
+        setLikes(likes.filter(({id}) => id !== film.id));
     }
 
     useEffect(() => {
