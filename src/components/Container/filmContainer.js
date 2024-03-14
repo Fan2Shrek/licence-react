@@ -1,5 +1,5 @@
 import styles from './filmContainer.module.scss';
-import FilmCard from "../Card/filmCard/filmCard";
+import FilmCard from "../Card/poster/filmCard";
 
 const FilmContainer = ({films, detailed = false}) => {
     return <div className={styles.container}>

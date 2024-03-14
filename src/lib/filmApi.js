@@ -13,6 +13,12 @@ class FilmApi {
         return this.api.get(`${this.baseUrl}/search/movie?${convertedQuery}&language=fr-FR`);
     }
 
+    searchAll(query) {
+        const convertedQuery = flatQuery(query);
+
+        return this.api.get(`${this.baseUrl}/search/multi?${convertedQuery}&language=fr-FR`);
+    }
+
     advancedSearch(query) {
         const convertedQuery = flatQuery(query);
 

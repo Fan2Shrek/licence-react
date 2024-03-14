@@ -5,7 +5,7 @@ import { Navigation , Mousewheel} from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import FilmCard from "../components/Card/filmCard/filmCard";
+import FilmCard from "../components/Card/poster/filmCard";
 import style from "./home.module.scss";
 import filmApi from "../lib/filmApi";
 

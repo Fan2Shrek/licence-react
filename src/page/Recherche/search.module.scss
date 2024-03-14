@@ -4,4 +4,12 @@
         margin-block: 1rem;
         text-align: center;
     }
+
+    .film-only {
+        text-align: center;
+
+        input {
+            margin-inline: 3px;
+        }
+    }
 }

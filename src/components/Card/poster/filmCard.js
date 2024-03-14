@@ -8,9 +8,7 @@ import Like from '../../Icon/like';
 
 const FilmCard = ({ film, detailed }) => {
     const { likeIds, addLike, removeLike } = useContext(LikeContext);
-
     const isLike = useMemo(() => likeIds.includes(film.id), [likeIds, film]);
-    // const isLike = likeIds.includes(film.id);
 
     const handleLike = (e) => {
         e.preventDefault();
@@ -23,7 +21,7 @@ const FilmCard = ({ film, detailed }) => {
             <p>{film.title}</p>
             <img src={getPath(film.poster_path)} alt={film.title}/>
             {detailed && <div>
-                <p>{new Date(film.release_date).getFullYear()}</p>
+                <p>{new Date(film.release_date).getFullYear()|| ''}</p>
             </div>
             }
         </div>
