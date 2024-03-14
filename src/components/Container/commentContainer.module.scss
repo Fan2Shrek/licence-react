@@ -1,0 +1,61 @@
+.container {
+    display: flex;
+    flex-direction: column;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        textarea {
+            width: 80%;
+            height: 100px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+    }
+
+    .comment {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 80%;
+        position: relative;
+        margin-inline: 15px;
+
+        &:after {
+            content: '';
+            display: block;
+            clear: both;
+            border: 9px solid transparent;
+            position: absolute;
+            bottom: 3px;
+        }
+
+        &:nth-child(odd) {
+            background-color: #f4f4f4;
+            align-self: start;
+
+            &:after {
+                border-right-color: #ccc;
+                border-left: 0;
+                left: -10px;
+            }
+        }
+
+        &:nth-child(even) {
+            background-color: #fff;
+            align-self: end;
+
+            &:after {
+                border-left-color: #ccc;
+                border-right: 0;
+                right: -10px;
+            }
+        }
+    }
+}

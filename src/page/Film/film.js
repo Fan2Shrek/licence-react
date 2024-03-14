@@ -8,6 +8,7 @@ import filmApi from '../../lib/filmApi';
 import { getPath } from '../../helper/imgHelper';
 import CategoryCard from '../../components/Card/category/categoryCard';
 import StarContainer from '../../components/Container/starContainer';
+import CommentContainer from '../../components/Container/commentContainer';
 
 const Film = () => {
     let { id } = useParams();
@@ -68,6 +69,7 @@ const Film = () => {
                 </div>
             </div>
         </div>
+        <CommentContainer filmId={film.id} />
     </div>;
 }
 
