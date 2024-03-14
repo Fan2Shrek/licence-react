@@ -10,7 +10,7 @@ class FilmApi {
     search(query) {
         const convertedQuery = flatQuery(query);
 
-        return this.api.get(`${this.baseUrl}/search/movie?=${convertedQuery}&language=fr-FR`);
+        return this.api.get(`${this.baseUrl}/search/movie?${convertedQuery}&language=fr-FR`);
     }
 
     advancedSearch(query) {

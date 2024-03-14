@@ -1,19 +1,20 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 import styles from './navbar.module.scss';
 import path from '../../path';
+import SearchContext from '../../Context/searchContext';
 
 const Navbar = () => {
     let navigate = useNavigate();
+    const { setQuery, query } = useContext(SearchContext);
     const [search, setSearch] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate(`${path.search}?search=${search}`);
-        // @todo find a better way to refresh the page
-        // Due to the fact that the search page is a child of the home page, the page is not refreshed when the search is done
-        window.location.reload();
+        setQuery((query) => ({...query, query: search}));
+
+        navigate(`${path.search}?query=${search}`);
     }
 
     return <nav className={styles.navbar}>
@@ -32,7 +33,7 @@ const Navbar = () => {
         </div>
         <div>
             <form onSubmit={handleSubmit}>
-                <input value={search} onChange={(e) => setSearch(e.target.value)}/>
+                <input value={search || query.query || ''} onChange={(e) => setSearch(e.target.value)}/>
             </form>
         </div>
     </nav>
